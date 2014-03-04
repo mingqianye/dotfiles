@@ -64,3 +64,17 @@ set background=dark
 nnoremap ,, :FufCoverageFile <cr>
 nnoremap \ :Ag<SPACE>
 nnoremap K :Ag "<C-R><C-W>"<CR>
+
+
+"Move lines
+"" Normal mode
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
+
+" Insert mode
+inoremap <C-j> <ESC>:m .+1<CR>==gi
+inoremap <C-k> <ESC>:m .-2<CR>==gi
+"
+" " Visual mode
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
