@@ -45,6 +45,11 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 "ag
 Bundle 'rking/ag.vim'
 
+
+"VimRuby
+Bundle 'vim-ruby/vim-ruby'
+
+
 filetype plugin indent on     " required
 " "
 " " Brief help
