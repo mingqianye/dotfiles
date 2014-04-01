@@ -93,3 +93,5 @@ filetype plugin on    " Enable filetype-specific plugins
 
 
 au FileType ruby setl sw=2 sts=2 et
+au FileType python setl ts=8 et sw=4 sts=4
+
