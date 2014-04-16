@@ -49,6 +49,9 @@ Bundle 'rking/ag.vim'
 "VimRuby
 Bundle 'vim-ruby/vim-ruby'
 
+"Pig script syntax highlight
+Bundle "motus/pig.vim"
+
 
 filetype plugin indent on     " required
 " "
