@@ -17,29 +17,30 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-rails.git'
+" " The sparkup vim script is in a subdirectory of this repo called vim.
+" " Pass the path to set the runtimepath properly.
+Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+" " scripts from http://vim-scripts.org/vim/scripts.html
+Bundle 'L9'
+Bundle 'FuzzyFinder'
+" " scripts not on GitHub
+Bundle 'git://git.wincent.com/command-t.git'
+" " git repos on your local machine (i.e. when working on your own plugin)
 
-"nerdtree
 Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/nerdtree.git'
-
-"snipmate
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "garbas/vim-snipmate"
-Bundle "honza/vim-snippets"
 
 "ctrlp
 Bundle "kien/ctrlp.vim"
+
+
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 "ag
 Bundle 'rking/ag.vim'
 
+
 "VimRuby
 Bundle 'vim-ruby/vim-ruby'
-
-"Pig script syntax highlight
-Bundle "motus/pig.vim"
 
 "AutoComplPop
 Bundle 'AutoComplPop'
@@ -89,3 +90,4 @@ filetype plugin on    " Enable filetype-specific plugins
 au FileType ruby setl sw=2 sts=2 et
 au FileType python setl ts=8 et sw=4 sts=4
 
+set cursorline
