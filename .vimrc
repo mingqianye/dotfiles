@@ -20,24 +20,15 @@ Bundle 'tpope/vim-rails.git'
 " " The sparkup vim script is in a subdirectory of this repo called vim.
 " " Pass the path to set the runtimepath properly.
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-" " scripts from http://vim-scripts.org/vim/scripts.html
-Bundle 'L9'
-Bundle 'FuzzyFinder'
-" " scripts not on GitHub
-Bundle 'git://git.wincent.com/command-t.git'
-" " git repos on your local machine (i.e. when working on your own plugin)
 
 Bundle 'scrooloose/nerdtree'
 
 "ctrlp
 Bundle "kien/ctrlp.vim"
-
-
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 "ag
 Bundle 'rking/ag.vim'
-
 
 "VimRuby
 Bundle 'vim-ruby/vim-ruby'
@@ -56,12 +47,10 @@ filetype plugin indent on     " required
 " " see :h vundle for more details or wiki for FAQ
 " " NOTE: comments after Bundle commands are not allowed.
 
-
 set ic
 syntax enable
 set background=dark
 
-nnoremap ,, :FufCoverageFile <cr>
 nnoremap \ :Ag<SPACE>
 nnoremap K :Ag "<C-R><C-W>"<CR>
 
@@ -92,3 +81,9 @@ au FileType python setl ts=8 et sw=4 sts=4
 
 set cursorline
 set number
+
+" For local replace
+nnoremap gr gd[{V%::s/<C-R>///gc<left><left><left>
+"
+" " For global replace
+nnoremap gR gD:%s/<C-R>///gc<left><left><left>
