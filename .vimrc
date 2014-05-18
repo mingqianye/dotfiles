@@ -37,6 +37,7 @@ set cursorline
 set number
 set ic
 set background=dark
+set backspace=2
 syntax on             " Enable syntax highlighting
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
