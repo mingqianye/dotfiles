@@ -1,91 +1,46 @@
 set nocompatible              " be iMproved, required
-filetype off                  " required
+set rtp+=~/.vim/bundle/Vundle.vim
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-" " alternatively, pass a path where Vundle should install bundles
-" "let path = '~/some/path/here'
-" "call vundle#rc(path)
-"
-" " let Vundle manage Vundle, required
-Bundle 'gmarik/vundle'
-"
-" " The following are examples of different formats supported.
-" " Keep bundle commands between here and filetype plugin indent on.
-" " scripts on GitHub repos
-Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'tpope/vim-rails.git'
-" " The sparkup vim script is in a subdirectory of this repo called vim.
-" " Pass the path to set the runtimepath properly.
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-
-Bundle 'scrooloose/nerdtree'
-
-"ctrlp
-Bundle "kien/ctrlp.vim"
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-
-"ag
-Bundle 'rking/ag.vim'
-
-"VimRuby
-Bundle 'vim-ruby/vim-ruby'
-
-"AutoComplPop
-Bundle 'AutoComplPop'
-
-filetype plugin indent on     " required
-" "
-" " Brief help
-" " :BundleList          - list configured bundles
-" " :BundleInstall(!)    - install (update) bundles
-" " :BundleSearch(!) foo - search (or refresh cache first) for foo
-" " :BundleClean(!)      - confirm (or auto-approve) removal of unused bundles
-" "
-" " see :h vundle for more details or wiki for FAQ
-" " NOTE: comments after Bundle commands are not allowed.
-
-set ic
-syntax enable
-set background=dark
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'tpope/vim-rails.git'
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'scrooloose/nerdtree'
+Plugin 'rking/ag.vim'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'AutoComplPop'
+Plugin 'ctrlp.vim'
+call vundle#end()            " required
 
 nnoremap \ :Ag<SPACE>
 nnoremap K :Ag "<C-R><C-W>"<CR>
-
 
 "Move lines
 "" Normal mode
 nnoremap <C-j> :m .+1<CR>==
 nnoremap <C-k> :m .-2<CR>==
-
 " Insert mode
 inoremap <C-j> <ESC>:m .+1<CR>==gi
 inoremap <C-k> <ESC>:m .-2<CR>==gi
-"
-" " Visual mode
+" Visual mode
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
+" For local replace
+nnoremap gr gd[{V%::s/<C-R>///gc<left><left><left>
+" For global replace
+nnoremap gR gD:%s/<C-R>///gc<left><left><left>
 
-set nocompatible      " We're running Vim, not Vi!
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+set cursorline
+set number
+set ic
+set background=dark
 syntax on             " Enable syntax highlighting
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
 
-
 au FileType ruby setl sw=2 sts=2 et
 au FileType python setl ts=8 et sw=4 sts=4
-
-set cursorline
-set number
-
-" For local replace
-nnoremap gr gd[{V%::s/<C-R>///gc<left><left><left>
-"
-" " For global replace
-nnoremap gR gD:%s/<C-R>///gc<left><left><left>
-
-set backspace=2
