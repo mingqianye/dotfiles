@@ -11,6 +11,7 @@ Plugin 'rking/ag.vim'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'AutoComplPop'
 Plugin 'ctrlp.vim'
+Plugin 'motus/pig.vim'
 call vundle#end()            " required
 
 nnoremap \ :Ag<SPACE>
@@ -26,6 +27,12 @@ inoremap <C-k> <ESC>:m .-2<CR>==gi
 " Visual mode
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
+" Visual mode move horizontally
+vnoremap <C-h> xhp
+vnoremap <C-l> xlP
+vnoremap < <gv
+vnoremap > >gv
+
 
 " For local replace
 nnoremap gr gd[{V%::s/<C-R>///gc<left><left><left>
