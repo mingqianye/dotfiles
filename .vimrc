@@ -12,6 +12,7 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'AutoComplPop'
 Plugin 'ctrlp.vim'
 Plugin 'motus/pig.vim'
+Plugin 'terryma/vim-multiple-cursors'
 call vundle#end()            " required
 
 nnoremap \ :Ag<SPACE>
