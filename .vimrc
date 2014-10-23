@@ -13,6 +13,7 @@ Plugin 'AutoComplPop'
 Plugin 'ctrlp.vim'
 Plugin 'motus/pig.vim'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'tmhedberg/matchit'
 call vundle#end()            " required
 
 nnoremap \ :Ag<SPACE>
@@ -39,6 +40,8 @@ vnoremap > >gv
 nnoremap gr gd[{V%::s/<C-R>///gc<left><left><left>
 " For global replace
 nnoremap gR gD:%s/<C-R>///gc<left><left><left>
+
+let g:ctrlp_working_path_mode = 'rw'
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set cursorline
