@@ -14,6 +14,7 @@ Plugin 'ctrlp.vim'
 Plugin 'motus/pig.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tmhedberg/matchit'
+Plugin 'junegunn/vim-easy-align'
 call vundle#end()            " required
 
 nnoremap \ :Ag<SPACE>
@@ -35,6 +36,10 @@ vnoremap <C-l> xlP
 vnoremap < <gv
 vnoremap > >gv
 
+" Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
+vmap <Enter> <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. <Leader>aip)
+nmap <Leader>a <Plug>(EasyAlign)
 
 " For local replace
 nnoremap gr gd[{V%::s/<C-R>///gc<left><left><left>
@@ -55,6 +60,7 @@ filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
 
 au FileType ruby setl sw=2 sts=2 et
+au FileType eruby setl sw=2 sts=2 et
 au FileType python setl ts=8 et sw=4 sts=4
 
 set hlsearch
