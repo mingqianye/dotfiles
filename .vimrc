@@ -15,6 +15,7 @@ Plugin 'motus/pig.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tmhedberg/matchit'
 Plugin 'junegunn/vim-easy-align'
+Plugin 'christoomey/vim-tmux-navigator'
 call vundle#end()            " required
 
 nnoremap \ :Ag<SPACE>
