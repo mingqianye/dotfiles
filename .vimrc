@@ -19,21 +19,17 @@ Plugin 'christoomey/vim-tmux-navigator'
 call vundle#end()            " required
 
 nnoremap \ :Ag<SPACE>
-nnoremap K :Ag "<C-R><C-W>"<CR>
 
 "Move lines
 "" Normal mode
-nnoremap <C-j> :m .+1<CR>==
-nnoremap <C-k> :m .-2<CR>==
-" Insert mode
-inoremap <C-j> <ESC>:m .+1<CR>==gi
-inoremap <C-k> <ESC>:m .-2<CR>==gi
+nnoremap ∆ :m .+1<CR>==
+nnoremap ˚ :m .-2<CR>==
 " Visual mode
-vnoremap <C-j> :m '>+1<CR>gv=gv
-vnoremap <C-k> :m '<-2<CR>gv=gv
+vnoremap ∆ :m '>+1<CR>gv=gv
+vnoremap ˚ :m '<-2<CR>gv=gv
 " Visual mode move horizontally
-vnoremap <C-h> xhp
-vnoremap <C-l> xlP
+vnoremap ˙ xhp
+vnoremap ¬ xlP
 vnoremap < <gv
 vnoremap > >gv
 
@@ -46,6 +42,9 @@ nmap <Leader>a <Plug>(EasyAlign)
 nnoremap gr gd[{V%::s/<C-R>///gc<left><left><left>
 " For global replace
 nnoremap gR gD:%s/<C-R>///gc<left><left><left>
+
+" Quick Save
+nnoremap SS :w<CR>
 
 let g:ctrlp_working_path_mode = 'rw'
 
@@ -66,3 +65,6 @@ au FileType python setl ts=8 et sw=4 sts=4
 
 set hlsearch
 hi Search cterm=NONE ctermfg=white ctermbg=blue
+
+" make mvim clipboard work in tmux
+set clipboard=unnamed
