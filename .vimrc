@@ -16,6 +16,9 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tmhedberg/matchit'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'godlygeek/csapprox'
 call vundle#end()            " required
 
 nnoremap \ :Ag<SPACE>
@@ -54,17 +57,27 @@ set number
 set ic
 set background=dark
 set backspace=2
+set hlsearch
+hi Search cterm=NONE ctermfg=white ctermbg=blue
+
 syntax on             " Enable syntax highlighting
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
 
+au FileType sh setl sw=2 sts=2 et
 au FileType ruby setl sw=2 sts=2 et
 au FileType eruby setl sw=2 sts=2 et
 au FileType python setl ts=8 et sw=4 sts=4
+au FileType yaml setl ts=8 et sw=4 sts=4
 
 set hlsearch
 hi Search cterm=NONE ctermfg=white ctermbg=blue
+
+set t_Co=256
+let g:jellybeans_use_lowcolor_black = 0
+colorscheme jellybeans
+au VimEnter * IndentGuidesEnable
 
 " make mvim clipboard work in tmux
 set clipboard=unnamed
