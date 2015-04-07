@@ -19,6 +19,8 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'godlygeek/csapprox'
+Plugin 'sjl/gundo.vim'
+Plugin 'tpope/vim-ragtag'
 call vundle#end()            " required
 
 nnoremap \ :Ag<SPACE>
