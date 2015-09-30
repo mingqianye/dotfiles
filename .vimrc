@@ -73,6 +73,10 @@ au FileType eruby setl sw=2 sts=2 et
 au FileType python setl ts=8 et sw=4 sts=4
 au FileType yaml setl ts=8 et sw=4 sts=4
 
+au BufNewFile,BufRead *.scss set filetype=eruby
+au BufNewFile,BufRead *.erb set filetype=eruby
+
+
 set hlsearch
 hi Search cterm=NONE ctermfg=white ctermbg=blue
 
