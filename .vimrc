@@ -21,6 +21,7 @@ Plugin 'nanotech/jellybeans.vim'
 Plugin 'godlygeek/csapprox'
 Plugin 'sjl/gundo.vim'
 Plugin 'tpope/vim-ragtag'
+Plugin 'VimClojure'
 call vundle#end()            " required
 
 nnoremap \ :Ag<SPACE>
