@@ -7,6 +7,7 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'tpope/vim-rails.git'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'rking/ag.vim'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'AutoComplPop'
@@ -77,6 +78,7 @@ au FileType yaml setl ts=8 et sw=4 sts=4
 au BufNewFile,BufRead *.scss set filetype=eruby
 au BufNewFile,BufRead *.erb set filetype=eruby
 
+map <Leader>n <plug>NERDTreeTabsToggle<CR>
 
 set hlsearch
 hi Search cterm=NONE ctermfg=white ctermbg=blue
@@ -85,6 +87,7 @@ set t_Co=256
 let g:jellybeans_use_lowcolor_black = 0
 colorscheme jellybeans
 au VimEnter * IndentGuidesEnable
+let g:nerdtree_tabs_open_on_console_startup=1
 
 " make mvim clipboard work in tmux
 set clipboard=unnamed
