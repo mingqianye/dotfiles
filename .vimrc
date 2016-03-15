@@ -53,7 +53,6 @@ nnoremap gR gD:%s/<C-R>///gc<left><left><left>
 " Quick Save
 nnoremap SS :w<CR>
 
-let g:ctrlp_working_path_mode = 'rw'
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set cursorline
@@ -87,7 +86,9 @@ set t_Co=256
 let g:jellybeans_use_lowcolor_black = 0
 colorscheme jellybeans
 au VimEnter * IndentGuidesEnable
-let g:nerdtree_tabs_open_on_console_startup=1
+" let g:nerdtree_tabs_open_on_console_startup=1
 
 " make mvim clipboard work in tmux
 set clipboard=unnamed
+
+let g:ctrlp_working_path_mode = 'c'
