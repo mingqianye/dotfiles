@@ -91,4 +91,6 @@ au VimEnter * IndentGuidesEnable
 " make mvim clipboard work in tmux
 set clipboard=unnamed
 
-let g:ctrlp_working_path_mode = 'c'
+let g:ctrlp_working_path_mode = '0'
+set swapfile
+set splitright
