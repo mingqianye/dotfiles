@@ -1,5 +1,5 @@
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-cp .vimrc ~
-cp .tmux.conf ~
-
-open vim, run :PluginInstall
+1. $ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+2. $ cp .vimrc ~
+3. $ cp .tmux.conf ~
+4. open vim, run :PluginInstall
+5. follow YouCompleteMe plugin README to install the autocomplete features

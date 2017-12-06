@@ -10,7 +10,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'rking/ag.vim'
 Plugin 'vim-ruby/vim-ruby'
-Plugin 'AutoComplPop'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'ctrlp.vim'
 Plugin 'motus/pig.vim'
 Plugin 'terryma/vim-multiple-cursors'
@@ -23,6 +23,7 @@ Plugin 'godlygeek/csapprox'
 Plugin 'sjl/gundo.vim'
 Plugin 'tpope/vim-ragtag'
 Plugin 'VimClojure'
+Plugin 'fatih/vim-go'
 call vundle#end()            " required
 
 nnoremap \ :Ag<SPACE>
@@ -94,3 +95,11 @@ set clipboard=unnamed
 let g:ctrlp_working_path_mode = '0'
 set swapfile
 set splitright
+
+set completeopt-=preview
+
+let g:go_highlight_structs = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
