@@ -54,6 +54,7 @@ nnoremap gR gD:%s/<C-R>///gc<left><left><left>
 " Quick Save
 nnoremap SS :w<CR>
 
+set dir=/tmp
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set cursorline
@@ -90,7 +91,7 @@ au VimEnter * IndentGuidesEnable
 " let g:nerdtree_tabs_open_on_console_startup=1
 
 " make mvim clipboard work in tmux
-set clipboard=unnamed
+"set clipboard=unnamed
 
 let g:ctrlp_working_path_mode = '0'
 set swapfile
@@ -103,3 +104,4 @@ let g:go_highlight_methods = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4 
