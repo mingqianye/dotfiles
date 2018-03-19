@@ -8,10 +8,8 @@ Plugin 'tpope/vim-rails.git'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'rking/ag.vim'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'ctrlp.vim'
 Plugin 'motus/pig.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tmhedberg/matchit'
@@ -24,9 +22,9 @@ Plugin 'sjl/gundo.vim'
 Plugin 'tpope/vim-ragtag'
 Plugin 'VimClojure'
 Plugin 'fatih/vim-go'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 call vundle#end()            " required
-
-nnoremap \ :Ag<SPACE>
 
 "Move lines
 "" Normal mode
@@ -56,7 +54,6 @@ nnoremap SS :w<CR>
 
 set dir=/tmp
 
-set runtimepath^=~/.vim/bundle/ctrlp.vim
 set cursorline
 set number
 set ic
@@ -93,7 +90,6 @@ au VimEnter * IndentGuidesEnable
 " make mvim clipboard work in tmux
 "set clipboard=unnamed
 
-let g:ctrlp_working_path_mode = '0'
 set swapfile
 set splitright
 
@@ -105,3 +101,18 @@ let g:go_highlight_functions = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4 
+let g:go_fmt_command = "goimports"
+
+" fzf: https://github.com/junegunn/fzf.vim#usage
+" Mapping selecting mappings
+nmap <leader><tab> <plug>(fzf-maps-n)
+xmap <leader><tab> <plug>(fzf-maps-x)
+omap <leader><tab> <plug>(fzf-maps-o)
+
+" Insert mode completion
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
+
+nnoremap <c-p> :Files<cr>
