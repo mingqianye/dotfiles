@@ -116,3 +116,4 @@ imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 
 nnoremap <c-p> :Files<cr>
+nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
