@@ -9,21 +9,23 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'vim-ruby/vim-ruby'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'motus/pig.vim'
+"Plugin 'Valloric/YouCompleteMe'
+"Plugin 'mdempsky/gocode', {'rtp': 'vim/'}
+"Plugin 'shougo/deoplete.nvim'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'tmhedberg/matchit'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'godlygeek/csapprox'
-Plugin 'sjl/gundo.vim'
-Plugin 'tpope/vim-ragtag'
-Plugin 'VimClojure'
+"Plugin 'tpope/vim-ragtag'
+"Plugin 'VimClojure'
 Plugin 'fatih/vim-go'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
+Plugin 'hashivim/vim-terraform'
+Plugin 'calviken/vim-gdscript3'
+
 call vundle#end()            " required
 
 "Move lines
@@ -51,6 +53,12 @@ nnoremap gR gD:%s/<C-R>///gc<left><left><left>
 
 " Quick Save
 nnoremap SS :w<CR>
+imap ZZ <ESC>ZZ
+imap SS <ESC>SS
+imap ZQ <ESC>ZQ
+
+imap <C-l> <Del>
+inoremap <C-c> <ESC>
 
 set dir=/tmp
 
@@ -71,10 +79,12 @@ au FileType sh setl sw=2 sts=2 et
 au FileType ruby setl sw=2 sts=2 et
 au FileType eruby setl sw=2 sts=2 et
 au FileType python setl ts=8 et sw=4 sts=4
-au FileType yaml setl ts=8 et sw=4 sts=4
+au FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+au FileType tf setlocal ts=2 sts=2 sw=2 expandtab
 
 au BufNewFile,BufRead *.scss set filetype=eruby
 au BufNewFile,BufRead *.erb set filetype=eruby
+au BufNewFile,BufRead *.gd setlocal ts=2 sts=2 sw=2 expandtab
 
 map <Leader>n <plug>NERDTreeTabsToggle<CR>
 
@@ -95,11 +105,16 @@ set splitright
 
 set completeopt-=preview
 
+let g:go_highlight_types = 1
+"let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_operators = 1
+"let g:go_highlight_extra_types = 1
+let g:go_highlight_function_arguments = 1
+let g:go_highlight_build_constraints = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_methods = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4 
 let g:go_fmt_command = "goimports"
 
@@ -117,3 +132,19 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 
 nnoremap <c-p> :Files<cr>
 nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
+
+set splitright
+set splitbelow
+
+set number relativenumber
+set colorcolumn=80
+
+let g:terraform_align=1
+"set omnifunc=syntaxcomplete#Complete
+let g:deoplete#enable_at_startup = 1
+
+" Disable Ex mode
+nnoremap Q <Nop>
+
+let mapleader=" "              
+nmap <leader>pf <c-p>
