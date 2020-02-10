@@ -106,39 +106,6 @@ export GO111MODULE=on
 #export PATH=$PATH:$GOPATH/bin
 #export PATH=$PATH:$GOROOT/bin
 
-setaws() {
-  export AWS_DEFAULT_PROFILE=mye
-  export SWAPEXENV=mye
-  export SWAPEX_ENVIRONMENT=mye
-  export AWS_ACCOUNT_ID=105695602563
-  export AWS_ACCESS_KEY_ID=$(aws configure get aws_access_key_id)
-  export AWS_SECRET_ACCESS_KEY=$(aws configure get aws_secret_access_key)
-  export AWS_DEFAULT_REGION=$(aws configure get region)
-}
-
-setawsdev() {
-  export AWS_DEFAULT_PROFILE=development
-  export SWAPEXENV=development
-  export SWAPEX_ENVIRONMENT=development
-  export AWS_ACCOUNT_ID=506884542981
-  export AWS_ACCESS_KEY_ID=$(aws configure get aws_access_key_id)
-  export AWS_SECRET_ACCESS_KEY=$(aws configure get aws_secret_access_key)
-  export AWS_DEFAULT_REGION=$(aws configure get region)
-}
-
-setaws_databricks_qa() {
-  export SWAPEXENV=databricks-qa
-  export SWAPEX_ENVIRONMENT=databricks-qa
-  export AWS_DEFAULT_PROFILE=databricks_qa
-  export AWS_ACCOUNT_ID=676681784853
-  export AWS_ACCESS_KEY_ID=$(aws configure get aws_access_key_id)
-  export AWS_SECRET_ACCESS_KEY=$(aws configure get aws_secret_access_key)
-  export AWS_DEFAULT_REGION=$(aws configure get region)
-}
-
-sethttpiml() {
-  source ~/work/virtualenv/http-sigv4/env/bin/activate
-}
 
 #alias dockerrm="docker ps -a | awk '{print $1}' | grep -v CONTAINER | xargs docker rm -f"
 

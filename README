@@ -1,5 +1,6 @@
 1. $ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 2. $ cp .vimrc ~
 3. $ cp .tmux.conf ~
-4. open vim, run :PluginInstall
-5. follow YouCompleteMe plugin README to install the autocomplete features
+4.1 Install oh-my-zsh, then `cp birame.zsh-theme ~/.oh-my-zsh/themes`
+4.2 In `~/.zshrc`, update the line -> `ZSH_THEME="birame"`
+5. open vim, run :PluginInstall
