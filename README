@@ -4,3 +4,4 @@
 4.1 Install oh-my-zsh, then `cp birame.zsh-theme ~/.oh-my-zsh/themes`
 4.2 In `~/.zshrc`, update the line -> `ZSH_THEME="birame"`
 5. open vim, run :PluginInstall
+6. blah blah
