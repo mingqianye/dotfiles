@@ -67,6 +67,7 @@ set ic
 set background=dark
 set backspace=2
 set hlsearch
+set incsearch
 hi Search cterm=NONE ctermfg=white ctermbg=blue
 
 syntax on             " Enable syntax highlighting
@@ -149,5 +150,4 @@ let g:deoplete#enable_at_startup = 1
 " Disable Ex mode
 nnoremap Q <Nop>
 
-let mapleader=" "              
 nmap <leader>pf <c-p>
