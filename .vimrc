@@ -3,8 +3,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'tpope/vim-rails.git'
+Plugin 'easymotion/vim-easymotion'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
@@ -81,10 +80,15 @@ au FileType eruby setl sw=2 sts=2 et
 au FileType python setl ts=8 et sw=4 sts=4
 au FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 au FileType tf setlocal ts=2 sts=2 sw=2 expandtab
+au FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
+au FileType html setlocal ts=2 sts=2 sw=2 expandtab
+au FileType css setlocal ts=2 sts=2 sw=2 expandtab
 
 au BufNewFile,BufRead *.scss set filetype=eruby
 au BufNewFile,BufRead *.erb set filetype=eruby
 au BufNewFile,BufRead *.gd setlocal ts=2 sts=2 sw=2 expandtab
+au BufNewFile,BufRead *.dot setlocal ts=2 sts=2 sw=2 expandtab
+au BufNewFile,BufRead *.ts setlocal ts=2 sts=2 sw=2 expandtab
 
 map <Leader>n <plug>NERDTreeTabsToggle<CR>
 
@@ -98,7 +102,7 @@ au VimEnter * IndentGuidesEnable
 " let g:nerdtree_tabs_open_on_console_startup=1
 
 " make mvim clipboard work in tmux
-"set clipboard=unnamed
+set clipboard=unnamed
 
 set swapfile
 set splitright
@@ -140,7 +144,6 @@ set number relativenumber
 set colorcolumn=80
 
 let g:terraform_align=1
-"set omnifunc=syntaxcomplete#Complete
 let g:deoplete#enable_at_startup = 1
 
 " Disable Ex mode
